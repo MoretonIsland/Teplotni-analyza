@@ -1,37 +1,61 @@
 <?php
 
-/* Třída reprezentující teplotní data měst */
+/* Třída TemperatureAnalyzer se používá k analýze teplot v jednotlivých městech. */
 
-class CityTemperature
+class TemperatureAnalyzer
 {
-    public $name;
-    public $temperatures;
+    /* Pole pro uchování objektů měst. Každý prvek pole $cities obsahuje informace o jednom městě - jeho název a teplotní údaj. */
+    public $cities = [];
 
-    /* Nastavení třídy CityTemperature */
-
-    public function __construct($name, $temperatures)
+    public function addCity($city)
     {
-        $this->name = $name;
-        $this->temperatures = $temperatures;
+        $this->cities[] = $city;
+    }
+/* Metoda overallAverageTemperature vypočítává celkový průměr teplot ze všech měst.*/
+
+    public function overallAverageTemperature()
+    {
+        $totalTemperatures = 0;
+        $totalCount = 0;
+
+        foreach ($this->cities as $city) {
+            $totalTemperatures += array_sum($city->temperatures);
+            $totalCount += count($city->temperatures);
+        }
+
+        return $totalTemperatures / $totalCount;
+    }
+/* Metoda highestOverallTemperature vypočítává nejvyšší teplotu ze všech měst. */
+    public function highestOverallTemperature()
+    {
+        $highestTemperature = 0;
+
+        foreach ($this->cities as $city) {
+            $highestTemperature = max($highestTemperature, $city->maxTemperature());
+        }
+
+        return $highestTemperature;
     }
 
-/* Metoda pro výpočet průměrné teploty u měst */
+/* Metoda getResults získává výsledky analýzy teplot ve formě objektů typu Result. */
 
-    public function averageTemperature()
+    public function getResults()
     {
-        return array_sum($this->temperatures) / count($this->temperatures);
-    }
+        $results = [];
+        foreach ($this->cities as $city) {
+            $result = new Result(
+                $city->name,
+                $city->averageTemperature(),
+                $city->maxTemperature()
+            );
 
-/* Metoda pro získání maximální teploty u měst */
+            $results[] = $result;
+        }
 
-    public function maxTemperature()
-    {
-        return max($this->temperatures);
+        return $results;
     }
 }
-
 ?>
-
 
 
 
