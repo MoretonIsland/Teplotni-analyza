@@ -15,8 +15,7 @@ include 'TemperatureAnalyzer.php';
 
 $temperatures = require 'temperatures.php';
 
- /* Asociativní pole $cityAbbreviations, neboli datová struktura, kde klíčem je zkratka města a hodnotou je název města. */
-
+/* Asociativní pole $cityAbbreviations, neboli datová struktura, kde klíčem je zkratka města a hodnotou je název města. */
 
 $cityAbbreviations = array(
     'BR' => 'Brisbane',
@@ -32,7 +31,7 @@ $cityAbbreviations = array(
     'SE' => 'Seisia',
 );
 
-/* Vytvoření objektů CityTemperature pro každé město */
+/* Cyklus foreach pro yytvoření objektů měst CityTemperature */
 
 $cities = [];
 foreach ($temperatures as $day => $cityTemperatures) {
@@ -46,7 +45,7 @@ foreach ($temperatures as $day => $cityTemperatures) {
 /* Vytvoření objektu TemperatureAnalyzer */
 $temperatureAnalyzer = new TemperatureAnalyzer();
 
-/* Přidání měst do objektu TemperatureAnalyzer */
+/* Přidání měst do objektu TemperatureAnalyzer pomocí cyklu foreach */
 foreach ($cities as $city) {
     $temperatureAnalyzer->addCity($city);
 }
@@ -63,14 +62,14 @@ $highestOverallTemperature = $temperatureAnalyzer->highestOverallTemperature();
 <h1>Temperature analysis from October 2023</h1>
 <p>City temperatures in the state of Queensland</p>
 
-<!-- Vkládání výsledků do kontejneru -->
+<!-- Vkládání výsledků do kontejneru polem -->
 <div id="results">
 
 <h2>Average temperature:</h2>
 <ul>
     <?php
 
-    /* Kód, který řadí názvy měst podle abecedy pro průměrnou teplotu. */
+    /* Kód, který řadí názvy měst podle abecedy pro průměrnou teplotu, pole, cyklus. */
     $sortedCities = $cities;
     usort($sortedCities, function ($a, $b) {
         return strcmp($a->name, $b->name);
@@ -84,7 +83,7 @@ $highestOverallTemperature = $temperatureAnalyzer->highestOverallTemperature();
 <h2>Highest temperature:</h2>
 <ul>
     <?php
-    /* Kód, který řadí názvy měst podle abecedy pro nejvyšší teplotu. */
+    /* Kód, který řadí názvy měst podle abecedy pro nejvyšší teplotu - pole, cyklus. */
     $sortedCities = $cities;
     usort($sortedCities, function ($a, $b) {
         return strcmp($a->name, $b->name);
@@ -97,11 +96,11 @@ $highestOverallTemperature = $temperatureAnalyzer->highestOverallTemperature();
 
 </div>
 
-<!-- Celkový průměrný stav teplot -->
+<!-- Celkový průměrný stav teplot, proměnná-->
 <h2>Overall average temperature:</h2>
 <p><?php echo ucfirst('overall average temperature: ' . number_format($overallAverageTemperature, 2)) . ' °C'; ?></p>
 
-<!-- Nejvyšší zaznamenaná teplota ze všech měst -->
+<!-- Nejvyšší zaznamenaná teplota ze všech měst, proměnná -->
 <h2>Highest recorded temperature from all cities:</h2>
 <p><?php echo ucfirst('highest recorded temperature from all cities: ' . number_format($highestOverallTemperature, 2)) . ' °C'; ?></p>
 
@@ -113,3 +112,4 @@ $highestOverallTemperature = $temperatureAnalyzer->highestOverallTemperature();
 
 </body>
 </html>
+
