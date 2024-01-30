@@ -1,13 +1,13 @@
 <?php
 
-/* Třída reprezentující teplotní data měst */
+/* Třída reprezentující teplotní data jednoho města */
 
 class CityTemperature
 {
     public $name;
     public $temperatures;
 
-    /* Nastavení třídy CityTemperature */
+    /* Konstruktor třídy CityTemperature pro nastavení názvu a teplot města. */
 
     public function __construct($name, $temperatures)
     {
@@ -15,14 +15,14 @@ class CityTemperature
         $this->temperatures = $temperatures;
     }
 
-/* Metoda pro výpočet průměrné teploty u měst */
+/* Metoda averageTemperature pro výpočet průměrné teploty u města */
 
     public function averageTemperature()
     {
         return array_sum($this->temperatures) / count($this->temperatures);
     }
 
-/* Metoda pro získání maximální teploty u měst */
+/* Metoda maxTemperature vrací maximální teplotu z teplot města.3 */
 
     public function maxTemperature()
     {
@@ -31,6 +31,185 @@ class CityTemperature
 }
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
