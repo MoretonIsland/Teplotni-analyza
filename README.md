@@ -75,6 +75,8 @@ $cityAbbreviations = array(
     'SG' => 'St.George',
     'SE' => 'Seisia',
 
+Soubor SearchTemperatures.php pomocí funkce searchTemperature vyhledává teploty v zadaných datech podle stanoveného cílového teplotního limitu. 
+
  Závěr    
 
      Program Teplotní Analýza je nejen nástrojem pro prezentaci teplot, ale také používá principy OOP pro organizaci a správu dat. OOP vytváří modulární a snadno udržovatelný kód, což zvyšuje celkovou kvalitu programu.
