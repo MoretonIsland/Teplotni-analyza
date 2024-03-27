@@ -23,17 +23,164 @@ h2 {
     
 }
 
+/* Vizuální oddělení mezi výpisy a nadpisem */
+#results-hr {
+    margin-top: 20px; /* Mezera nad čárou */
+    margin-bottom: 20px; /* Mezera pod čárou */
+    border-top: 2px solid #3498db; /* Barva, tloušťka a styl čáry */
+    width: 100%; /* Šířka čáry */
+}
 
-body {
-    background-image: url('Gold Coast2.jpg');
-    background-size: cover; /* zajistí, aby se obrázek přizpůsobil velikosti okna prohlížeče */
-    background-position: center; /* nastaví pozici obrázku na střed */
-    background-repeat: no-repeat; /* zabrání opakování obrázku */
+.image-grid {
+    display: flex;
+}
+
+.image-grid img {
+    max-width: 90%; /* Omezí šířku obrázku na maximálně 100% šířky rodičovského prvku */
+    margin-right: 3px; /* Přidáváme 3px mezery mezi obrázky */
+}
+
+/* Poslední obrázek nemá mít margin-right */
+.image-grid img:last-child {
+    margin-right: 0;
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+
+
+
+  
+  
+  
+  
+
+
+
+  
+  
+  
+  
 
 
 
