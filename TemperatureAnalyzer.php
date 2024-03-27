@@ -231,16 +231,3 @@ class TemperatureAnalyzer
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
